@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mobile-responsive page with AJAX menu</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Global styles */
+
+    /* Styles for desktop devices */
+    /* ... */
+
+    /* Media query for tablets */
+    @media screen and (max-width: 768px) {
+      /* Styles for tablets */
+      /* ... */
+    }
+
+    /* Media query for smartphones */
+    @media screen and (max-width: 480px) {
+      /* Styles for smartphones */
+      /* ... */
+
+        /* Hide the menu by default */
+        nav ul {
+          display: none;
+        }
+
+        /* Show the menu when the user clicks the menu icon */
+        nav .menu-icon {
+          display: block;
+          cursor: pointer;
+        }
+
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Page header content goes here -->
+
+    <!-- Menu icon -->
+    <div class="menu-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <h1>Welcome to My Webpage</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+  </header>
+  
+  <main>
+    <!-- Main content goes here -->
+
+    <h1>Mobile-responsive page with AJAX menu</h1>
+    <p>This is a mobile-responsive page with an AJAX menu.</p>
+    <p>Click the menu icon to show the menu.</p>
+
+  </main>
+  
+  <footer>
+    <!-- Page footer content goes here -->
+    <p>&copy; 2023 My Webpage</p>
+
+
+  </footer>
+  
+  <nav >
+    <a href="menu.html">Visit the menu Page</a>
+    <ul>
+      <li><a href="#">Menu Item 1</a></li>
+      <li><a href="#">Menu Item 2</a></li>
+      <li><a href="#">Menu Item 3</a></li>
+      <li><a href="#">Menu Item 4</a></li>
+      <li><a href="#">Menu Item 5</a></li>
+    </ul>
+  </nav>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Load the menu content using AJAX
+      $.ajax({
+        url: 'menu.html', // URL of the menu content
+        success: function(data) {
+          $('nav ul').html(data); // Load the menu content into the nav element
+        }
+      });
+    });
+  </script>
+</body>
+</html>
